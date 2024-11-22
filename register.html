@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Cielis</title>
+  <meta name="description" content="Meet Cielis, and have some fun betting on random events.">
+  <link rel="icon" href="/assets/cielis.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/ui/input.css">
+  <link rel="stylesheet" href="styles/ui/form.css">
+  <link rel="stylesheet" href="styles/ui/button.css">
+  <link rel="stylesheet" href="styles/blocks/logo.css">
+  <link rel="stylesheet" href="styles/register.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <main class="register">
+    <div class="register__left">
+      <div class="register__left-inner">
+        <div class="register__info">
+          <h1 class="register__title">Welcome to Cielis!</h1>
+    
+          <h2 class="register__subtitle">
+            Have some fun betting on random events.
+          </h2>
+        </div>
+        
+        <form class="form">        
+          <div class="form__item">
+            <label for="name">Name</label>
+            <input id="name" class="input" required />
+          </div>
+      
+          <div class="form__item">
+            <label for="date-of-birth">Date of Birth</label>
+            <input id="date-of-birth" class="input" maxlength="10" required>
+          </div>
+  
+          <div class="form__item">
+            <label for="email">Email</label>
+            <input id="email" class="input" type="email" required />
+          </div>
+              
+          <div class="form__item">
+            <label for="password">Password</label>
+            <input id="password" class="input" type="password" required>
+          </div>
+  
+          <button class="button">
+            Register
+          </button>
+        </form>
+
+        <p class="login-link"></p>
+      </div>
+    </div>
+
+    <div class="register__right"></div>
+  </main>
+
+  <script src="/scripts/register.js"></script>
+</body>
+</html>

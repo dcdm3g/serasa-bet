@@ -5,6 +5,13 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+
+  @media (min-width: 768px) {
+    & {
+      top: 2.5rem;
+      left: 2.5rem;
+    }
+  }
 }
 
 .logo__text {
@@ -12,6 +19,7 @@
   line-height: 1.75rem;
   font-weight: medium;
 }
+
 
 .login {
   display: flex;
@@ -39,9 +47,8 @@
   color: hsl(var(--muted-foreground));
 }
 
-@media (min-width: 768px) {
-  .logo {
-    top: 2.5rem;
-    left: 2.5rem;
-  }
+.login__register-link {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: hsl(var(--muted-foreground));
 }

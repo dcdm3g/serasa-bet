@@ -18,6 +18,16 @@ h6 {
   font-weight: inherit;
 }
 
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 :root {
   --background: 222.2 84% 4.9%;
   --foreground: 210 40% 98%;
