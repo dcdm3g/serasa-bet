@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Cielis</title>
+  <link rel="icon" href="assets/cielis.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/ui/input.css">
+  <link rel="stylesheet" href="styles/ui/form.css">
+  <link rel="stylesheet" href="styles/ui/button.css">
+  <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+  <div class="logo">
+    <img aria-describedby="logo-text" src="assets/cielis.svg" />
+    <span id="logo-text" class="logo__text">Cielis</span>
+  </div>
+
+  <main class="login">
+    <div class="login__info">
+      <h1 class="login__title">Login to Cielis.</h1>
+
+      <h2 class="login__subtitle">
+        Turn Predictions into Wins. Dive into the thrill of creating and betting
+        on your favorite events.
+      </h2>
+    </div>
+
+    <form class="form">
+      <div class="form__item">
+        <label for="email">Email</label>
+        <input id="email" class="input" type="email" required />
+      </div>
+
+      <div class="form__item">
+        <label for="password">Password</label>
+        <input id="password" class="input" type="password" required>
+      </div>
+
+      <button class="button">
+        Login
+      </button>
+    </form>
+  </main>
+</body>
+</html>
