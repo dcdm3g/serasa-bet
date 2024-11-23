@@ -48,16 +48,22 @@
   color: hsl(var(--muted-foreground));
 }
 
+.register__login-link {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: hsl(var(--muted-foreground));
+}
+
 .register__right {
   height: 100%;
-  background-image: url('/assets/friends.webp');
+  background-image: url('../assets/friends.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
 
-@media (min-width: 1024px) {
-  .register__right {
-    display: block;
+  @media (min-width: 1024px) {
+    & {
+      display: block;
+    }
   }
 }
