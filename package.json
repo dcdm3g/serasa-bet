@@ -2,5 +2,9 @@
   "name": "aula-pi-website",
   "version": "1.0.0",
   "type": "module",
-  "private": true
+  "private": true,
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  }
 }
