@@ -29,8 +29,9 @@ function file(pathname, response) {
 }
 
 function page(pathname, response) {
-  const path = join(root, '/pages', pathname + '.html')
-  console.log(path)
+  const path = pathname === '/'
+    ? join(root, '/pages/index.html')
+    : join(root, '/pages', pathname + '.html')
 
   readFile(path, (err, data) => {
     if (err) {
@@ -45,7 +46,6 @@ function page(pathname, response) {
 
 const server = createServer(async (request, response) => {
   const { pathname } = parse(request.url)
-  console.log(pathname)
 
   if (pathname.startsWith('/static')) {
     return file(pathname, response)
