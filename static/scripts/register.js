@@ -1,5 +1,4 @@
 const dateOfBirth = document.querySelector('#date-of-birth')
-console.log(dateOfBirth)
 
 dateOfBirth.addEventListener('keypress', (e) => {
   if (e.keyCode < 47 || e.keyCode > 57) {
