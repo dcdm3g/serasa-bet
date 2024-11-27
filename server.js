@@ -51,7 +51,7 @@ const server = createServer(async (request, response) => {
     return file(pathname, response)
   }
 
-  const isAuthenticated = false
+  const isAuthenticated = true
   const isAuthenticationRoute = ['/login', '/register'].includes(pathname)
 
   if (!isAuthenticated && !isAuthenticationRoute) {

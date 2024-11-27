@@ -52,3 +52,9 @@
   line-height: 1rem;
   color: hsl(var(--muted-foreground));
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
