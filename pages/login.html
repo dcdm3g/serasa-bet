@@ -31,12 +31,14 @@
     <form class="form">
       <div class="form__item">
         <label for="email">Email</label>
-        <input id="email" class="input" type="email" required />
+        <input id="email" class="input" />
+        <p class="form__message"></p>
       </div>
 
       <div class="form__item">
         <label for="password">Password</label>
-        <input id="password" class="input" type="password" required>
+        <input id="password" class="input">
+        <p class="form__message"></p>
       </div>
 
       <button class="button">
@@ -48,5 +50,7 @@
       </p>
     </form>
   </main>
+
+  <script type="module" src="/static/scripts/login.js"></script>
 </body>
 </html>
