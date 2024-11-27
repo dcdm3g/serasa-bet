@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/static/styles/ui/form.css">
   <link rel="stylesheet" href="/static/styles/ui/button.css">
   <link rel="stylesheet" href="/static/styles/register.css">
+  <link rel="stylesheet" href="/static/styles/ui/animations.css">
 </head>
 <body>
   <main class="register">
@@ -27,22 +28,26 @@
         <form class="form">        
           <div class="form__item">
             <label for="name">Name</label>
-            <input id="name" class="input" required />
+            <input id="name" class="input" />
+            <p class="form__message"></p>
           </div>
       
           <div class="form__item">
             <label for="date-of-birth">Date of Birth</label>
-            <input id="date-of-birth" class="input" maxlength="10" required>
+            <input id="date-of-birth" class="input">
+            <p class="form__message"></p>
           </div>
   
           <div class="form__item">
             <label for="email">Email</label>
-            <input id="email" class="input" type="email" required />
+            <input id="email" class="input" />
+            <p class="form__message"></p>
           </div>
               
           <div class="form__item">
             <label for="password">Password</label>
-            <input id="password" class="input" type="password" required>
+            <input id="password" class="input">
+            <p class="form__message"></p>
           </div>
   
           <button class="button">
@@ -59,6 +64,6 @@
     <div class="register__right"></div>
   </main>
 
-  <script src="/static/scripts/register.js"></script>
+  <script type="module" src="/static/scripts/register.js"></script>
 </body>
 </html>
