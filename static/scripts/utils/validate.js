@@ -21,7 +21,7 @@
  * @returns {Result} result
  */
 export function validate(inputs) {
-  let result = {
+  const result = {
     success: true,
     data: {}
   }
@@ -31,7 +31,8 @@ export function validate(inputs) {
     const message = document.querySelector('#' + name + ' + .form__message')
 
     for (const validator of validators) {
-      const validation = validator(input.value)
+      const value = input.value.trim()
+      const validation = validator(value)
       
       if (typeof validation === 'string') {
         message.innerText = validation
@@ -43,7 +44,10 @@ export function validate(inputs) {
       }
 
       message.innerText = ''
-      result.data[name] = input.value
+
+      if (result.success) {
+        result.data[name] = value
+      }
     }
   }
 
