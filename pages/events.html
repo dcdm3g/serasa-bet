@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SerasaBet | Events</title>
+  <link rel="stylesheet" href="/static/styles/base.css">
+  <link rel="stylesheet" href="/static/styles/events.css">
+  <link rel="stylesheet" href="/static/styles/layout/header.css">
+  <link rel="stylesheet" href="/static/styles/ui/button.css">
+  <link rel="stylesheet" href="/static/styles/ui/input.css">
+  <link rel="stylesheet" href="/static/styles/ui/card.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img aria-describedby="logo-text" src="/static/assets/logo.svg" />
+      <span id="logo-text" class="logo__text">SerasaBet</span>
+    </div>
+
+    <div class="header__left">
+      <a href="/events/create">
+        <button class="button button--outline items-center button--sm">
+          <i data-lucide="plus"></i>
+          <i data-lucide="book-image"></i>
+        </button>
+      </a>
+      
+      <a href="/wallet">
+        <button class="button button--sm">
+          <i data-lucide="wallet"></i>
+        </button>
+      </a>
+    </div>
+  </header>
+
+  <main class="events">
+    <form class="search">
+      <div class="search__inner">
+        <input
+          class="input search__input"
+          type="text"
+          placeholder="Search for events..."
+          className="rounded-r-none"
+        />
+
+        <button class="button search__button" type="submit" className="rounded-l-none">
+          Search
+        </button>
+      </div>
+    </form>
+
+    <ul class="event-grid">
+      <li>
+        <div class="card event-card">
+          <div class="card__title">Evento</div>
+          <div class="card__description">Bla Bla Bla</div>
+
+          <div class="event-card__info">
+            <div class="event-card__info-text">R$ 20.00</div>
+            <div class="event-card__separator"></div>
+            <div class="event-card__info-text">20.000 bets</div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="card event-card">
+          <div class="card__title">Evento</div>
+          <div class="card__description">Bla Bla Bla</div>
+
+          <div class="event-card__info">
+            <div class="event-card__info-text">R$ 20.00</div>
+            <div class="event-card__separator"></div>
+            <div class="event-card__info-text">20.000 bets</div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="card event-card">
+          <div class="card__title">Evento</div>
+          <div class="card__description">Bla Bla Bla</div>
+
+          <div class="event-card__info">
+            <div class="event-card__info-text">R$ 20.00</div>
+            <div class="event-card__separator"></div>
+            <div class="event-card__info-text">20.000 bets</div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="card event-card">
+          <div class="card__title">Evento</div>
+          <div class="card__description">Bla Bla Bla</div>
+
+          <div class="event-card__info">
+            <div class="event-card__info-text">R$ 20.00</div>
+            <div class="event-card__separator"></div>
+            <div class="event-card__info-text">20.000 bets</div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="card event-card">
+          <div class="card__title">Evento</div>
+          <div class="card__description">Bla Bla Bla</div>
+
+          <div class="event-card__info">
+            <div class="event-card__info-text">R$ 20.00</div>
+            <div class="event-card__separator"></div>
+            <div class="event-card__info-text">20.000 bets</div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="card event-card">
+          <div class="card__title">Evento</div>
+          <div class="card__description">Bla Bla Bla</div>
+
+          <div class="event-card__info">
+            <div class="event-card__info-text">R$ 20.00</div>
+            <div class="event-card__separator"></div>
+            <div class="event-card__info-text">20.000 bets</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons()</script>
+</body>
+</html>
