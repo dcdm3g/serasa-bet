@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serasa Bet | Your school will explode</title>
+  <link rel="stylesheet" href="/static/styles/base.css">
+  <link rel="stylesheet" href="/static/styles/event.css">
+  <link rel="stylesheet" href="/static/styles/layout/header.css">
+  <link rel="stylesheet" href="/static/styles/ui/button.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img aria-describedby="logo-text" src="/static/assets/logo.svg" />
+      <span id="logo-text" class="logo__text">SerasaBet</span>
+    </div>
+
+    <div class="header__left">
+      <a href="/events/create">
+        <button class="button button--outline items-center button--sm">
+          <i data-lucide="plus"></i>
+          <i data-lucide="book-image"></i>
+        </button>
+      </a>
+      
+      <a href="/wallet">
+        <button class="button button--sm">
+          <i data-lucide="wallet"></i>
+        </button>
+      </a>
+    </div>
+  </header>
+
+  <main class="event">
+    <h1 class="event__title">Your school will explode</h1>
+
+    <div class="event__info">
+      <div class="event__row">
+        <span class="event__data">
+          Should happen at January 1, 2025
+        </span>
+
+        <div class="event__separator"></div>
+
+        <span class="event__data">
+          R$ 20.00 per odd
+        </span>
+      </div>
+
+      <div class="event__row">
+        <span class="event__data">
+          Betting period between 1 December 2024 and 31 December 2024
+        </span>
+      </div>
+    </div>
+
+    <p class="event__description">
+      Just for luck, but there's a reason: They gave us a really cool web
+      development homework!
+    </p>
+
+    <div class="event__betting-options">
+      <button class="button">This event will happen</button>
+      <button class="button">This event won't happen</button>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons()</script>
+</body>
+</html>
