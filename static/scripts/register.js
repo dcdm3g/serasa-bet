@@ -44,7 +44,7 @@ form.addEventListener('submit', (event) => {
   button.innerHTML = 
     '<img class="animate-spin" width="16" height="16" src="/static/assets/loader-circle.svg" />'
 
-  fetch('https://aula-pi.onrender.com/register', {
+  fetch('http://localhost:5000/register', {
     method: 'POST',
     credentials: 'include',
     headers: {
@@ -71,7 +71,7 @@ form.addEventListener('submit', (event) => {
     }
 
     if (response.status !== 201) {
-      alert('Uh oh! There was an error on our side. Please try again later.')
+      alert('Uh oh! There was an error on our end. Please try again later.')
       button.innerHTML = 'Register'
 
       return

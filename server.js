@@ -51,14 +51,14 @@ const server = createServer(async (request, response) => {
     return file(pathname, response)
   }
 
-  const resp = await fetch('https://aula-pi.onrender.com/refresh-session', {
+  const resp = await fetch('http://localhost:5000/refresh-session', {
     method: 'POST',
     headers: {
       'Cookie': request.headers.cookie,
     }
   })
 
-  const isAuthenticated = false
+  const isAuthenticated = resp.status === 201
   const isAuthenticationRoute = ['/login', '/register'].includes(pathname)
   
   if (!isAuthenticated && !isAuthenticationRoute) {
