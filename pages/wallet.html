@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="/static/styles/base.css">
   <link rel="stylesheet" href="/static/styles/ui/button.css">
   <link rel="stylesheet" href="/static/styles/layout/header.css">
+  <link rel="stylesheet" href="/static/styles/ui/card.css">
+  <link rel="stylesheet" href="/static/styles/ui/table.css">
+  <link rel="stylesheet" href="/static/styles/wallet.css">
+  <link rel="stylesheet" href="/static/styles/ui/button.css">
 </head>
 <body>
   <header class="header">
@@ -30,6 +34,72 @@
       </a>
     </div>
   </header>
+
+  <main class="wallet">
+    <h1 class="wallet__title">Your Wallet</h1>
+
+    <div class="wallet__cards">
+      <div class="card">
+        <div class="card__header">
+          <div class="card__title">Balance</div>
+      
+          <div class="card__description">
+            Increase your earnings by betting on events.
+          </div>
+        </div>
+
+        <div class="card__content">
+          <div class="value">R$ 16.00</div>
+          
+          <div class="wallet-actions">
+            <button class="button button--sm">Deposit</button>
+            <button class="button button--sm">Withdraw</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__header">
+          <div class="card__title">Your Bets</div>
+      
+          <div class="card__description">
+            Betting is fun! Bet on more events to relax.
+          </div>
+        </div>
+
+        <div class="card__content card__content--wallet">
+          <div class="value">84</div>
+
+          <a href="/events">
+            <button class="button button--sm">Find more events</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="wallet-history">
+      <h2 class="wallet-history__title">Your History</h2>
+
+      <div class="table__container">
+        <table class="table">
+          <thead class="table__header">
+            <tr class="table__row">
+              <th class="table__head">Type</th>
+              <th class="table__head">Amount</th>
+              <th class="table__head">Date</th>
+            </tr>
+          </thead>
+          <tbody class="table__body">
+            <tr class="table__row">
+              <td class="table__cell">Bet</td>
+              <td class="table__cell">R$ 120</td>
+              <td class="table__cell">1 de Janeiro de 2024</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>      
+    </section>
+  </main>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>lucide.createIcons()</script>

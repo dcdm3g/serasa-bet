@@ -53,26 +53,6 @@ const server = createServer(async (request, response) => {
     return file(pathname, response)
   }
 
-  const resp = await fetch('https://aula-pi.onrender.com/refresh-session', {
-    method: 'POST',
-    headers: {
-      'Cookie': request.headers.cookie,
-    }
-  })
-
-  const isAuthenticated = false
-  const isAuthenticationRoute = ['/login', '/register'].includes(pathname)
-
-  if (!isAuthenticated && !isAuthenticationRoute) {
-    response.writeHead(301, { location: '/login' })
-    return response.end()
-  }
-  
-  if (isAuthenticated && isAuthenticationRoute) {
-    response.writeHead(301, { location: '/' })
-    return response.end()
-  }
-
   return page(pathname, response)
 })
 
