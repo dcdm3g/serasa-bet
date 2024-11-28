@@ -23,7 +23,19 @@ fetch('http://localhost:5000/events/overview', {
   method: 'GET',
   credentials: 'include',
 })
-.then((response) => response.json())
+.then((response) => {
+  if (response.status === 401) {
+    window.location.href = '/login'
+    return
+  }
+
+  if (response.status !== 200) {
+    alert('Uh oh! There was an error on our end. Please try again later.')
+    return
+  }
+
+  return response.json()
+})
 .then((data) => {
   eventsClosingSoonList.innerHTML = data.events_closing_soon.reduce(
     (acc, cur) => {
