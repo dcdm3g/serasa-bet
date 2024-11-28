@@ -22,6 +22,7 @@ form.addEventListener('submit', (event) => {
 
   fetch('https://aula-pi.onrender.com/login', {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -30,10 +31,21 @@ form.addEventListener('submit', (event) => {
       password: result.data.password 
     })
   })
-  .then((res) => res.json())
-  .then(() => window.location.href = '/')
-  .catch(() => {
-    button.innerHTML = 'Login'
-    alert('Uh oh! There was an error on our side. Please try again later.')
+  .then((response) => {
+    if (response.status === 401) {
+      alert('Incorrect email or password.')
+      button.innerHTML = 'Login'
+
+      return
+    }
+
+    if (response.status !== 201) {
+      button.innerHTML = 'Login'
+      alert('Uh oh! There was an error on our side. Please try again later.')
+
+      return
+    }
+
+    window.location.href = '/'
   })
 })

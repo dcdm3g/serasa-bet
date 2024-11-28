@@ -46,20 +46,37 @@ form.addEventListener('submit', (event) => {
 
   fetch('https://aula-pi.onrender.com/register', {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       name: result.data.name,
-      'date_of_birth': result.data['date-of-birth'],
+      'date_of_birth': result.data['date-of-birth']
+        .split('/')
+        .toReversed()
+        .join('-'),
       email: result.data.email, 
-      password: result.data.password 
+      password: result.data.password,
     })
   })
-  .then((res) => res.json())
-  .then(() => window.location.href = '/')
-  .catch(() => {
-    button.innerHTML = 'Register'
-    alert('Uh oh! There was an error on our side. Please try again later.')
+  .then((response) => {
+    console.log(response)
+
+    if (response.status === 409) {
+      alert('Email already in use. Maybe you should log in instead.')
+      button.innerHTML = 'Register'
+
+      return
+    }
+
+    if (response.status !== 201) {
+      alert('Uh oh! There was an error on our side. Please try again later.')
+      button.innerHTML = 'Register'
+
+      return
+    }
+
+    window.location.href = '/'
   })
 })

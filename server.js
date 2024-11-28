@@ -47,11 +47,20 @@ function page(pathname, response) {
 const server = createServer(async (request, response) => {
   const { pathname } = parse(request.url)
 
+  console.log(request.headers.cookie)
+
   if (pathname.startsWith('/static')) {
     return file(pathname, response)
   }
 
-  const isAuthenticated = true
+  const resp = await fetch('https://aula-pi.onrender.com/refresh-session', {
+    method: 'POST',
+    headers: {
+      'Cookie': request.headers.cookie,
+    }
+  })
+
+  const isAuthenticated = false
   const isAuthenticationRoute = ['/login', '/register'].includes(pathname)
 
   if (!isAuthenticated && !isAuthenticationRoute) {
