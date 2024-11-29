@@ -77,6 +77,6 @@ const server = createServer(async (request, response) => {
   return page(pathname, response)
 })
 
-server.listen(3000, '0.0.0.0', () => {
+server.listen(process.env.PORT ?? 3000, '0.0.0.0', () => {
   console.log('Listening on http://0.0.0.0:3000')
 })
