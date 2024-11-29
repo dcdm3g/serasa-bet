@@ -51,3 +51,9 @@ fetch('http://localhost:5000/events/overview', {
     ''
   )
 })
+
+document.querySelector('#search-form').addEventListener('submit', (e) => {
+  e.preventDefault()
+  const search = document.querySelector('#search-input')
+  window.location.href = '/events?search=' + search.value
+})
