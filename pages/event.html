@@ -33,29 +33,31 @@
   </header>
 
   <main class="event">
-    <h1 class="event__title">Your school will explode</h1>
+    <h1 id="event-title" class="event__title">Your school will explode</h1>
 
     <div class="event__info">
       <div class="event__row">
         <span class="event__data">
-          Should happen at January 1, 2025
+          Should happen <span id="date">at January 1, 2025</span>
         </span>
 
         <div class="event__separator"></div>
 
         <span class="event__data">
-          R$ 20.00 per odd
+          R$ <span id="odds-value">20.00</span> per odd
         </span>
       </div>
 
       <div class="event__row">
         <span class="event__data">
-          Betting period between 1 December 2024 and 31 December 2024
+          Betting period between 
+          <span id="betting-start-date">1 December 2024</span> and 
+          <span id="betting-end-date">31 December 2024</span>
         </span>
       </div>
     </div>
 
-    <p class="event__description">
+    <p id="event-description" class="event__description">
       Just for luck, but there's a reason: They gave us a really cool web
       development homework!
     </p>
@@ -66,6 +68,7 @@
     </div>
   </main>
 
+  <script src="/static/scripts/event.js" type="module"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>lucide.createIcons()</script>
 </body>
