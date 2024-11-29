@@ -1,3 +1,5 @@
+let balance = null
+
 async function renderBalance() {
   const response = await fetch('http://localhost:5000/wallet/balance', {
     method: 'GET',
@@ -5,6 +7,7 @@ async function renderBalance() {
   })
 
   const data = await response.json()
+  balance = Number(data.balance)
 
   document.querySelector('#balance').innerText = 
     'R$ ' + parseFloat(data.balance).toFixed(2)
@@ -81,3 +84,37 @@ async function populate(params) {
 }
 
 populate()
+
+document.querySelector('#deposit-button').addEventListener('click', () => {
+  const amount = prompt('Enter the amount you would like to deposit')
+
+  fetch('http://localhost:5000/wallet/deposit', {
+    method: 'POST',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ amount: Number(amount) }),
+  })
+  .then(() => {
+    balance = 'R$ ' + (balance + Number(amount))
+    document.querySelector('#balance').innerText = balance
+  })
+})
+
+document.querySelector('#withdraw-button').addEventListener('click', () => {
+  const amount = prompt('Enter the amount you would like to withdraw')
+
+  fetch('http://localhost:5000/wallet/withdraw', {
+    method: 'POST',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ amount: Number(amount) }),
+  })
+  .then(() => {
+    balance = 'R$ ' + (balance - Number(amount))
+    document.querySelector('#balance').innerText = balance
+  })
+})

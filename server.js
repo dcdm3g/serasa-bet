@@ -58,6 +58,9 @@ const server = createServer(async (request, response) => {
     }
   })
 
+  const setCookie = resp.headers.getSetCookie()
+  response.setHeader('Set-Cookie', setCookie)
+
   const isAuthenticated = resp.status === 201
   const isAuthenticationRoute = ['/login', '/register'].includes(pathname)
   
