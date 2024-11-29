@@ -38,41 +38,48 @@
   <main class="create-event">
     <h1 class="create-event__title">Create Event</h1>
 
-    <form class="form">
+    <form id="form" class="form">
       <div class="form__item">
         <label class="label" for="name">Name</label>
         <input class="input" id="name">
+        <p class="form__message"></p>
       </div>
 
       <div class="form__item">
         <label class="label" for="description">Description</label>
         <input class="input" id="description">
+        <p class="form__message"></p>
       </div>
       
       <div class="form__item">
         <label class="label" for="odds-value">Odds Value</label>
         <input class="input" id="odds-value">
+        <p class="form__message"></p>
       </div>
 
       <div class="form__item">
         <label class="label" for="date">Date</label>
         <input class="input" id="date">
+        <p class="form__message"></p>
       </div>
 
       <div class="form__item">
         <label class="label" for="betting-start-date">Betting Start Date</label>
         <input class="input" id="betting-start-date">
+        <p class="form__message"></p>
       </div>
 
       <div class="form__item">
         <label class="label" for="betting-end-date">Betting End Date</label>
         <input class="input" id="betting-end-date">
+        <p class="form__message"></p>
       </div>
-    </form>
 
-    <button class="button submit-button">Submit</button>
+      <button id="submit-button" class="button submit-button">Submit</button>
+    </form>
   </main>
 
+  <script src="/static/scripts/create-event.js" type="module"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>lucide.createIcons()</script>
 </body>
