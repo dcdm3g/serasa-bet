@@ -2,11 +2,12 @@
 const eventsClosingSoonList = document.querySelector('#events-closing-soon')
 const mostBetEventsList = document.querySelector('#most-bet-events')
 
-function renderEventCard({ title, description, odds_value, bet_count }) {
+function renderEventCard({ id, title, description, odds_value, bet_count }) {
   return `
-    <li class="scrollable-section__item">
-      <div class="card event-card">
-        <div class="card__title">${title}</div>
+    <a class="no-decoration" href="/event?id=${id}">
+      <li class="scrollable-section__item">
+        <div class="card event-card">
+          <div class="card__title">${title}</div>
           <div class="card__description">${description}</div>
 
           <div class="event-card__info">
@@ -14,8 +15,9 @@ function renderEventCard({ title, description, odds_value, bet_count }) {
             <div class="event-card__separator"></div>
             <div class="event-card__info-text">${bet_count} bets</div>
           </div>
-      </div>
-    </li>
+        </div>
+      </li>
+    </a>
   `
 }
 

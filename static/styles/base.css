@@ -70,3 +70,7 @@ body {
 * {
   border-color: hsl(var(--border));
 }
+
+.no-decoration {
+  text-decoration: none;
+}
