@@ -21,7 +21,7 @@ function renderEventCard({ id, title, description, odds_value, bet_count }) {
   `
 }
 
-fetch('http://localhost:5000/events/overview', {
+fetch('https://aula-pi-production.up.railway.app/events/overview', {
   method: 'GET',
   credentials: 'include',
 })

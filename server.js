@@ -51,7 +51,7 @@ const server = createServer(async (request, response) => {
     return file(pathname, response)
   }
 
-  const resp = await fetch('http://localhost:5000/refresh-session', {
+  const resp = await fetch('https://aula-pi-production.up.railway.app/refresh-session', {
     method: 'POST',
     headers: {
       'Cookie': request.headers.cookie,

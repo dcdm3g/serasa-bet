@@ -1,7 +1,7 @@
 let balance = null
 
 async function renderBalance() {
-  const response = await fetch('http://localhost:5000/wallet/balance', {
+  const response = await fetch('https://aula-pi-production.up.railway.app/wallet/balance', {
     method: 'GET',
     credentials: 'include',
   })
@@ -14,7 +14,7 @@ async function renderBalance() {
 }
 
 async function renderBetCount() {
-  const response = await fetch('http://localhost:5000/wallet/bet-count', {
+  const response = await fetch('https://aula-pi-production.up.railway.app/wallet/bet-count', {
     method: 'GET',
     credentials: 'include',
   })
@@ -60,7 +60,7 @@ function renderHistoryItem({ type, amount, date }) {
 }
 
 async function renderHistory() {
-  const response = await fetch('http://localhost:5000/wallet/history', {
+  const response = await fetch('https://aula-pi-production.up.railway.app/wallet/history', {
     method: 'GET',
     credentials: 'include',
   })
@@ -88,7 +88,7 @@ populate()
 document.querySelector('#deposit-button').addEventListener('click', () => {
   const amount = prompt('Enter the amount you would like to deposit')
 
-  fetch('http://localhost:5000/wallet/deposit', {
+  fetch('https://aula-pi-production.up.railway.app/wallet/deposit', {
     method: 'POST',
     credentials: 'include',
     headers: {
@@ -105,7 +105,7 @@ document.querySelector('#deposit-button').addEventListener('click', () => {
 document.querySelector('#withdraw-button').addEventListener('click', () => {
   const amount = prompt('Enter the amount you would like to withdraw')
 
-  fetch('http://localhost:5000/wallet/withdraw', {
+  fetch('https://aula-pi-production.up.railway.app/wallet/withdraw', {
     method: 'POST',
     credentials: 'include',
     headers: {
