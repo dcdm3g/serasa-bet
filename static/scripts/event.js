@@ -51,3 +51,28 @@ fetch('http://localhost:5000/events/' + id, {
   bettingStartDate.innerText = formatGMT(data.betting_start_date)
   bettingEndDate.innerText = formatGMT(data.betting_end_date)
 })
+
+function handleBetOnEvent(bet) {
+  const amount = prompt('Enter the amount you want to bet on it')
+
+  fetch('http://localhost:5000/events/' + id + '/bets', {
+    method: 'POST',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ amount: Number(amount), bet })
+  }).then((response) => {
+    if (response.status === 422) {
+      alert('Transfer denied.')
+      return
+    }
+
+    if (response.status !== 201) {
+      alert('Uh oh! There was an error on our end. Please try again later.')
+    }
+  })
+}
+
+document.querySelector('#will-happen').addEventListener('click', () => handleBetOnEvent('yes'))
+document.querySelector('#wont-happen').addEventListener('click', () => handleBetOnEvent('no'))
