@@ -31,7 +31,7 @@ function formatGMT(gmt) {
     + ' ' + date.getFullYear()
 }
 
-fetch('https://aula-pi.railway.internal/events/' + id, {
+fetch('http://localhost:5000/events/' + id, {
   method: 'GET',
   credentials: 'include',
 })
@@ -55,7 +55,11 @@ fetch('https://aula-pi.railway.internal/events/' + id, {
 function handleBetOnEvent(bet) {
   const amount = prompt('Enter the amount you want to bet on it')
 
-  fetch('https://aula-pi.railway.internal/events/' + id + '/bets', {
+  if (!Number(amount)) {
+    return
+  }
+
+  fetch('http://localhost:5000/events/' + id + '/bets', {
     method: 'POST',
     credentials: 'include',
     headers: {

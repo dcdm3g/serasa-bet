@@ -14,7 +14,7 @@ form.addEventListener('submit', (event) => {
   button.innerHTML = 
     '<img class="animate-spin" width="16" height="16" src="/static/assets/loader-circle.svg" />'
 
-  fetch('https://aula-pi.railway.internal/events', {
+  fetch('http://localhost:5000/events', {
     method: 'POST',
     credentials: 'include',
     headers: {

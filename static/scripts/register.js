@@ -44,7 +44,7 @@ form.addEventListener('submit', (event) => {
   button.innerHTML = 
     '<img class="animate-spin" width="16" height="16" src="/static/assets/loader-circle.svg" />'
 
-  fetch('https://aula-pi.railway.internal/register', {
+  fetch('http://localhost:5000/register', {
     method: 'POST',
     credentials: 'include',
     headers: {
@@ -61,8 +61,6 @@ form.addEventListener('submit', (event) => {
     })
   })
   .then((response) => {
-    console.log(response)
-
     if (response.status === 409) {
       alert('Email already in use. Maybe you should log in instead.')
       button.innerHTML = 'Register'

@@ -51,7 +51,7 @@ const server = createServer(async (request, response) => {
     return file(pathname, response)
   }
 
-  const resp = await fetch('https://aula-pi.railway.internal/refresh-session', {
+  const resp = await fetch('http://localhost:5000/refresh-session', {
     method: 'POST',
     headers: {
       'Cookie': request.headers.cookie,
@@ -77,7 +77,7 @@ const server = createServer(async (request, response) => {
   return page(pathname, response)
 })
 
-const port = Number(process.env.PORT) || 8080
+const port = Number(process.env.PORT) || 3000
 
 server.listen(port, '0.0.0.0', () => {
   console.log('Listening on http://0.0.0.0:' + port)
