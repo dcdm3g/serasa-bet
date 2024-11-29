@@ -13,6 +13,10 @@
   }
 }
 
+a[href="/"] {
+  text-decoration: none;
+}
+
 .logo {
   display: flex;
   align-items: center;
