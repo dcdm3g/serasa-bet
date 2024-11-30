@@ -87,6 +87,11 @@ populate()
 
 document.querySelector('#deposit-button').addEventListener('click', () => {
   const amount = prompt('Digite a quantidade que você gostaria de depositar')
+  const number = Number(amount)
+
+  if (!number) {
+    return
+  }
 
   fetch('http://localhost:5000/wallet/deposit', {
     method: 'POST',
@@ -94,16 +99,21 @@ document.querySelector('#deposit-button').addEventListener('click', () => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ amount: Number(amount) }),
+    body: JSON.stringify({ amount: number }),
   })
   .then(() => {
-    balance = 'R$ ' + parseFloat(Number(balance) + Number(amount)).toFixed(2)
-    document.querySelector('#balance').innerText = balance
+    balance = balance + number
+    document.querySelector('#balance').innerText = 'R$ ' + parseFloat(balance).toFixed(2)
   })
 })
 
 document.querySelector('#withdraw-button').addEventListener('click', () => {
   const amount = prompt('Digite a quantidade que você gostaria de sacar')
+  const number = Number(amount)
+
+  if (!number) {
+    return
+  }
 
   fetch('http://localhost:5000/wallet/withdraw', {
     method: 'POST',
@@ -111,10 +121,10 @@ document.querySelector('#withdraw-button').addEventListener('click', () => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ amount: Number(amount) }),
+    body: JSON.stringify({ amount: number }),
   })
   .then(() => {
-    balance = 'R$ ' + parseFloat(Number(balance) - Number(amount)).toFixed(2)
-    document.querySelector('#balance').innerText = balance
+    balance = balance - number
+    document.querySelector('#balance').innerText = 'R$ ' + parseFloat(balance).toFixed(2)
   })
 })
