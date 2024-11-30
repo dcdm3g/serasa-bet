@@ -53,6 +53,10 @@ button.search__button {
   padding-bottom: 1rem;
 }
 
+.scrollable-section__list {
+  list-style-type: none;
+}
+
 .scrollable-section__item > * {
   height: 100%;
 }

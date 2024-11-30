@@ -72,7 +72,7 @@ function handleBetOnEvent(bet) {
       return
     }
 
-    if (response.status !== 201) {
+    if (response.status !== 204) {
       alert('Ops! Houve um erro do nosso lado. Por favor, tente novamente mais tarde.')
     }
   })
