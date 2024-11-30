@@ -86,7 +86,7 @@ async function populate(params) {
 populate()
 
 document.querySelector('#deposit-button').addEventListener('click', () => {
-  const amount = prompt('Enter the amount you would like to deposit')
+  const amount = prompt('Digite a quantidade que você gostaria de depositar')
 
   fetch('http://localhost:5000/wallet/deposit', {
     method: 'POST',
@@ -97,13 +97,13 @@ document.querySelector('#deposit-button').addEventListener('click', () => {
     body: JSON.stringify({ amount: Number(amount) }),
   })
   .then(() => {
-    balance = 'R$ ' + (balance + Number(amount))
+    balance = 'R$ ' + parseFloat(Number(balance) + Number(amount)).toFixed(2)
     document.querySelector('#balance').innerText = balance
   })
 })
 
 document.querySelector('#withdraw-button').addEventListener('click', () => {
-  const amount = prompt('Enter the amount you would like to withdraw')
+  const amount = prompt('Digite a quantidade que você gostaria de sacar')
 
   fetch('http://localhost:5000/wallet/withdraw', {
     method: 'POST',
@@ -114,7 +114,7 @@ document.querySelector('#withdraw-button').addEventListener('click', () => {
     body: JSON.stringify({ amount: Number(amount) }),
   })
   .then(() => {
-    balance = 'R$ ' + (balance - Number(amount))
+    balance = 'R$ ' + parseFloat(Number(balance) - Number(amount)).toFixed(2)
     document.querySelector('#balance').innerText = balance
   })
 })
