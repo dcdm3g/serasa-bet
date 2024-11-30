@@ -75,6 +75,8 @@ function handleBetOnEvent(bet) {
     if (response.status !== 204) {
       alert('Ops! Houve um erro do nosso lado. Por favor, tente novamente mais tarde.')
     }
+
+    alert('Obrigado! Sua aposta foi computada.')
   })
 }
 
